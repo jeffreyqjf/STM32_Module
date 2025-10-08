@@ -58,7 +58,7 @@ void MyADC_Init(void)
  * @retval 16位 ADC 转换结果 (0~4095)
  * @note   本函数使用软件触发方式启动转换。
  */
-uint16_t Get_AD_Vaule(void)
+uint16_t MyAD_GetVaule(void)
 {
     ADC_SoftwareStartConvCmd(ADC1, ENABLE);
     while (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == RESET);

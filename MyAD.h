@@ -25,7 +25,7 @@ extern "C" {
 #include "stm32f10x.h"   ///< STM32 标准外设库头文件
 
 void MyADC_Init(void);
-uint16_t Get_AD_Vaule(void);
+uint16_t MyAD_GetVaule(void);
 
 #ifdef __cplusplus
 }
