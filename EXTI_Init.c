@@ -1,6 +1,6 @@
 /**
  ******************************************************************************
- * @file    EXIT_Init.c
+ * @file    EXTI_Init.c
  * @brief   提供 STM32F10x 外部中断 GPIO 初始化函数封装
  * @note    支持 GPIOA、GPIOB、GPIOC 引脚快速配置为外部中断输入模式，
  *          根据引脚编号自动映射 EXTI 线路与 NVIC 通道。
@@ -27,7 +27,7 @@
  * - 默认下降沿触发；
  * - 自动判断对应的 NVIC 通道。
  */
-void EXIT_GPIOA_Init(uint16_t x)
+void EXTI_GPIOA_Init(uint16_t x)
 {
     uint16_t pin = (1 << x);
     uint32_t EXTIx_IRQn = 0;
@@ -81,7 +81,7 @@ void EXIT_GPIOA_Init(uint16_t x)
  * - 默认下降沿触发；
  * - 自动判断对应的 NVIC 通道。
  */
-void EXIT_GPIOB_Init(uint16_t x)
+void EXTI_GPIOB_Init(uint16_t x)
 {
     uint16_t pin = (1 << x);
     uint32_t EXTIx_IRQn = 0;
@@ -135,7 +135,7 @@ void EXIT_GPIOB_Init(uint16_t x)
  * - 默认下降沿触发；
  * - 自动判断对应的 NVIC 通道。
  */
-void EXIT_GPIOC_Init(uint16_t x)
+void EXTI_GPIOC_Init(uint16_t x)
 {
     uint16_t pin = (1 << x);
     uint32_t EXTIx_IRQn = 0;
