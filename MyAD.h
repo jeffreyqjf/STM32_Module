@@ -31,4 +31,4 @@ uint16_t Get_AD_Vaule(void);
 }
 #endif
 
-#endif /* __MYADC_INIT_H */
+#endif /* __MYAD_H */

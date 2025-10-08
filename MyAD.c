@@ -23,8 +23,10 @@
  */
 void MyADC_Init(void)
 {
-    // GPIO 初始化
-    GPIOA_Init(GPIO_Mode_AIN, GPIO_Pin_2);
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
+
+    // GPIO 初始化，GPIO 和 ADC 通道需要相匹配
+    GPIOA_Init(GPIO_Mode_AIN, GPIO_Pin_0);
     
     // ADC 时钟配置 (PCLK2/6)
     RCC_ADCCLKConfig(RCC_PCLK2_Div6);
@@ -43,7 +45,6 @@ void MyADC_Init(void)
     ADC_Init(ADC1, &ADC_InitStructure);
     
     ADC_Cmd(ADC1, ENABLE);
-    // ADC 不需要 NVIC 初始化，因为本例未启用 ADC 中断
     
     // 校准 ADC
     ADC_ResetCalibration(ADC1);
@@ -61,7 +62,6 @@ uint16_t Get_AD_Vaule(void)
 {
     ADC_SoftwareStartConvCmd(ADC1, ENABLE);
     while (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == RESET);
-    // while( ADC_GetSoftwareStartConvStatus(ADC1) == SET);
-    // OLED_ShowNum(1, 1, ADC_GetConversionValue(ADC1), 6);
+
     return ADC_GetConversionValue(ADC1);
 }

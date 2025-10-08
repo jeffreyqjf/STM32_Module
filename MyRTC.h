@@ -9,7 +9,7 @@
  * @attention
  * 本文件依赖 STM32F10x 标准外设库 (stm32f10x.h)。
  * 默认使用外部低速晶振 (LSE, 32.768 kHz) 作为 RTC 时钟源。
- * 若需使用其他时钟源，请修改 MyRTC_Init.c 中的 RCC_RTCCLKConfig()。
+ * 若需使用其他时钟源，请修改 MyRTC.c 中的 RCC_RTCCLKConfig()。
  ******************************************************************************
  */
 
@@ -32,4 +32,4 @@ void MyRTC_Init(void);
 }
 #endif
 
-#endif /* __MYRTC_INIT_H */
+#endif /* __MYRTC_H */
